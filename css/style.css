@@ -1,0 +1,210 @@
+/* style.css */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
+
+:root {
+    --primary: #00adb5;       /* اللون التركوازي من تصميمك المفضل */
+    --primary-glow: rgba(0, 173, 181, 0.4);
+    --bg-dark: #222831;       /* الخلفية الداكنة */
+    --card-bg: #393e46;       /* لون البطاقات */
+    --text-white: #eeeeee;    /* لون النصوص */
+    --text-gray: #b2bec3;
+    --border: rgba(238, 238, 238, 0.1);
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.8;
+    overflow-x: hidden;
+    direction: rtl; /* لضمان التنسيق العربي الصحيح */
+}
+
+/* الهيدر - حل مشكلة القائمة العمودية */
+header {
+    background: rgba(34, 40, 49, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex; /* يجعل القائمة أفقية */
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* الحاويات */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* الشبكة والبطاقات */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+}
+
+/* الأزرار */
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-main:hover {
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* أشرطة المهارات */
+.bar-bg { 
+    background: #1a1e24; 
+    height: 12px; 
+    border-radius: 6px; 
+    margin: 15px 0; 
+    overflow: hidden; 
+}
+
+.bar-fill { 
+    background: var(--primary); 
+    height: 100%; 
+    border-radius: 6px; 
+    box-shadow: 0 0 10px var(--primary); 
+}
+
+/* تنسيق الفورم (اتصل بنا) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: white;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* الصناديق الاجتماعية في صفحة التواصل */
+.social-box:hover div {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+    opacity: 0.6;
+}
+
+/* التوافق مع الجوال */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul {
+        gap: 15px;
+    }
+}
+/* تنسيق الحاوية */
+.input-group {
+    position: relative;
+    margin-bottom: 30px; /* زيادة المسافة للسماح للعنوان بالارتفاع */
+}
+
+/* تنسيق النص (العنوان) الافتراضي */
+.input-group label {
+    position: absolute;
+    right: 45px; /* محاذاة مع الأيقونة من اليمين */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+    font-size: 1rem;
+    pointer-events: none; /* لكي لا يعيق النقر على الحقل */
+    transition: all 0.3s ease; /* سرعة الحركة للأعلى */
+}
+
+/* التأثير عند النقر (Focus) أو عند وجود نص مكتوب */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+    top: -12px; /* يرتفع فوق الإطار */
+    right: 15px;
+    font-size: 0.85rem;
+    color: var(--primary); /* يتغير لونه للتركوازي */
+    background: var(--bg-dark); /* خلفية صغيرة لكي لا يقطعه الإطار */
+    padding: 0 5px;
+}
+
+/* تعديل الأيقونة لتبقى في مكانها */
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    transition: 0.3s;
+}
