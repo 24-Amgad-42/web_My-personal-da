@@ -96,30 +96,32 @@
                     أرسل رسالة مباشرة
                 </h3>
                 
-                <form action="#" method="POST" class="contact-form">
+                 
+                <form action="https://formspree.io/f/2.4.amgad.4.2@gmail.com" method="POST" class="contact-form">
+    
                     <div class="input-group">
-                        <input type="text" id="name" required placeholder=" "> <!-- الـ placeholder الفارغ هنا ضروري للـ CSS -->
+                        <input type="text" name="الاسم" id="name" required placeholder=" ">
                         <label for="name">اسمك الكريم</label>
                         <i class="fas fa-user"></i>
                     </div>
 
                     <div class="input-group">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" id="email" required placeholder=" ">
+                       <input type="email" name="البريد" id="email" required placeholder=" ">
                         <label for="email">بريدك الإلكتروني</label>
+                       <i class="fas fa-envelope"></i>
                     </div>
 
                     <div class="input-group">
-                        <i class="fas fa-comment-dots" style="top: 20px;"></i>
-                        <textarea rows="5" id="message" required placeholder=" "></textarea>
+                        <textarea name="الرسالة" id="message" rows="5" required placeholder=" "></textarea>
                         <label for="message">كيف يمكنني مساعدتك؟</label>
-                    </div>
+                        <i class="fas fa-comment-dots" style="top: 25px; transform: none;"></i>
+                   </div>
 
-                    <button type="submit" class="btn-main" style="width: 100%; border: none; cursor: pointer; font-size: 1.2rem;">
+                    <button type="submit" class="btn-main" style="width: 100%; border: none; cursor: pointer;">
                         إرسال الرسالة 
-                        <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>
                     </button>
                 </form>
+ 
             </div>
         </section>
     </main>
