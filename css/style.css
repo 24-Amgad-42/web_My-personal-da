@@ -208,3 +208,55 @@ footer {
     color: var(--primary);
     transition: 0.3s;
 }
+/* تنسيق خاص للهواتف والشاشات الصغيرة */
+@media (max-width: 768px) {
+    /* 1. الهيدر: جعل الشعار في الأعلى والقائمة أسفله */
+    header {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap; /* للسماح للروابط بالنزول لسطر جديد إذا ضاقت الشاشة */
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    /* 2. الحاويات: تقليل المسافات الجانبية */
+    .container {
+        padding: 40px 15px;
+    }
+
+    /* 3. البطاقات: جعلها تأخذ العرض الكامل */
+    .grid-layout {
+        grid-template-columns: 1fr; /* عرض واحد فقط بدلاً من ثلاثة بجانب بعض */
+        gap: 20px;
+    }
+
+    /* 4. قسم "عني": ترتيب الصورة فوق النص */
+    section[style*="display: flex"] {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 30px 15px !important;
+        gap: 30px !important;
+    }
+
+    section img {
+        width: 200px !important; /* تصغير حجم الصورة في الموبايل */
+        height: 200px !important;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    /* 5. النموذج (Form): جعل الأزرار أسهل في النقر */
+    .contact-form {
+        width: 100%;
+    }
+}
