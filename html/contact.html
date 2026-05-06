@@ -95,30 +95,32 @@
                     <i class="fas fa-paper-plane" style="color: var(--primary); margin-left: 10px;"></i>
                     أرسل رسالة مباشرة
                 </h3>
-                <form action="mailto:2.4.amgad.4.2@gmail.com" method="GET" enctype="text/plain" class="contact-form">
-    
-    <div class="input-group">
-        <input type="text" name="الاسم" id="name" required placeholder=" ">
-        <label for="name">اسمك الكريم</label>
-        <i class="fas fa-user"></i>
-    </div>
-
-    <div class="input-group">
-        <input type="email" name="البريد" id="email" required placeholder=" ">
-        <label for="email">بريدك الإلكتروني</label>
-        <i class="fas fa-envelope"></i>
-    </div>
-
-    <div class="input-group">
-        <textarea name="الرسالة" id="message" rows="5" required placeholder=" "></textarea>
-        <label for="message">كيف يمكنني مساعدتك؟</label>
-        <i class="fas fa-comment-dots" style="top: 25px; transform: none;"></i>
-    </div>
-
-    <button type="submit" class="btn-main" style="width: 100%; border: none; cursor: pointer;">
-        فتح Gmail للإرسال
-    </button>
-    
+                <form action="https://formspree.io/f/2.4.amgad.4.2@gmail.com" method="POST" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" name="الاسم الكامل" id="name" required placeholder=" ">
+                        <label for="name">اسمك الكريم</label>
+                        <i class="fas fa-user"></i>
+                    </div>
+                
+                    <!-- حقل البريد الإلكتروني -->
+                    <div class="input-group">
+                        <input type="email" name="بريد المرسل" id="email" required placeholder=" ">
+                        <label for="email">بريدك الإلكتروني</label>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                
+                    <!-- حقل نص الرسالة -->
+                    <div class="input-group">
+                        <textarea name="محتوى الرسالة" id="message" rows="5" required placeholder=" "></textarea>
+                        <label for="message">كيف يمكنني مساعدتك؟</label>
+                        <i class="fas fa-comment-dots" style="top: 25px; transform: none;"></i>
+                    </div>
+                
+                    <!-- زر الإرسال المطور -->
+                    <button type="submit" class="btn-main" style="width: 100%; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px;">
+                        إرسال الرسالة 
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
                 
                 
